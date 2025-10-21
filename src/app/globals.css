@@ -1,26 +1,36 @@
+/* src/app/globals.css */
+
+/* --- 1. Import Eksternal --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css');
+
+/* Jika Anda punya file vendor CSS lain, letakkan di sini */
+/* @import url('path/to/animate.min.css'); */
+
+
+/* --- 2. Direktif Tailwind CSS WAJIB di paling atas --- */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+/* --- 3. Konfigurasi Tema Tailwind (jika ingin menulis di CSS) --- */
+@theme {
+  --color-primary: #FF9D45;
+  --color-primary-dark: #e88a3a;
+  --font-family-sans: Inter, sans-serif;
+  --font-family-heading: Roboto, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* --- 4. Custom Components (Layer Components) --- */
+@layer components {
+  .btn-primary {
+    @apply inline-block px-6 py-2.5 rounded font-semibold text-white bg-primary hover:bg-primary-dark transition-colors;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .language-flag {
+    width: 24px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 6px;
+  }
 }
