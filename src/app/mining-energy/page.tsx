@@ -2,10 +2,11 @@
 'use client';
 
 import Link from 'next/link';
-import { ChevronRight, ArrowRight, CheckCircle } from 'lucide-react'; // ✅ Import CheckCircle
+import Image from 'next/image';
+import { ChevronRight, CheckCircle, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-// --- CUSTOM ICONS (SVG kecil & profesional) ---
+// --- CUSTOM ICONS (SVG tebal & profesional) ---
 const LocationIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
     <path d="M21 10c0 7-5 13-10 13a9.8 9.8 0 01-4-8h2c2.67 0 8-5.33 8-10v2z" />
@@ -32,7 +33,7 @@ const TypeIcon = () => (
   </svg>
 );
 
-// Reusable Project Card Component
+// Reusable Project Card
 const ProjectCard = ({
   title,
   items,
@@ -45,7 +46,7 @@ const ProjectCard = ({
   return (
     <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
       <h3 className="text-xl font-bold text-slate-900 mb-4">{title}</h3>
-      <div className="space-y-3 mb-5">
+      <div className="space-y-2 mb-5">
         {items.map((item, i) => (
           <p key={i} className="text-sm text-slate-600 flex items-start gap-2">
             <span className="text-amber-600 mt-0.5">{item.icon}</span>
@@ -65,47 +66,92 @@ const ProjectCard = ({
   );
 };
 
+// Section Header with Image
+const ProjectSectionHeader = ({ title, imageSrc }: { title: string; imageSrc: string }) => (
+  <div className="relative w-full h-48 mb-8 rounded-xl overflow-hidden">
+    <Image
+      src={imageSrc}
+      alt={title}
+      fill
+      className="object-cover"
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent"></div>
+    <div className="absolute bottom-4 left-6">
+      <h2 className="text-2xl font-bold text-white" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
+        {title}
+      </h2>
+    </div>
+  </div>
+);
+
 const MiningEnergyPage = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1
-              className="text-4xl md:text-5xl font-bold text-slate-900 mb-6"
-              style={{ fontFamily: '"Cormorant Garamond", serif' }}
-            >
-              Sustainable Mining. Responsible Partnerships. Strategic Growth.
-            </h1>
-            <p className="text-lg text-slate-600">
-              PT Polaris Dana Investment plays an active role in Indonesia&apos;s growing mining and energy landscape by enabling structured, compliant, and high-value participation for both domestic and foreign investors.
-            </p>
+      <section className="relative w-full h-[60vh] overflow-hidden group">
+        <Image
+          src="/assets/images/img.Nickel02.jpg"
+          alt="Nickel Mining Operation"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/50 to-transparent" />
+        <div className="absolute top-20 -right-20 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 -left-20 w-80 h-80 bg-emerald-500/5 rounded-full blur-3xl" />
+
+        <div className="absolute inset-0 flex items-center">
+          <div className="container mx-auto px-6 lg:px-12 relative z-10">
+            <div className="max-w-3xl">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-sm md:text-base font-medium tracking-widest uppercase text-amber-400 mb-4"
+              >
+                Strategic Mining
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
+                style={{ fontFamily: '"Cormorant Garamond", serif' }}
+              >
+                Unlocking Indonesia’s Natural Potential
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-lg md:text-xl text-slate-200"
+              >
+                Coal • Gold • Nickel — responsible and profitable mining ventures.
+              </motion.p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Full Narrative + Strategic Model */}
+      {/* Narrative & Model */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-16">
-            {/* Full Narrative */}
             <div>
               <h2
                 className="text-2xl font-bold text-slate-900 mb-6"
                 style={{ fontFamily: '"Cormorant Garamond", serif' }}
               >
-                Our Mining
+                Our Projects
               </h2>
               <p className="text-slate-600 leading-relaxed mb-6">
-                Through a combination of strategic acquisitions and Joint Operation (JO) partnerships with licensed concession holders, Polaris connects global capital with high-potential mining assets — ensuring legal certainty, operational readiness, and environmental responsibility.
+                Through strategic acquisitions and Joint Operation (JO) partnerships with licensed concession holders, Polaris connects global capital with high-potential mining assets — ensuring legal certainty, operational readiness, and environmental responsibility.
               </p>
               <p className="text-slate-600 leading-relaxed">
                 Our mining portfolio covers coal, gold, and nickel, three of Indonesia&apos;s most important mineral commodities. Each project is developed under a verified IUP (Mining License) and RKAB (Annual Work Plan & Budget), ensuring compliance with Indonesian law and ESG principles.
               </p>
             </div>
 
-            {/* Strategic Model */}
             <div>
               <h2
                 className="text-2xl font-bold text-slate-900 mb-6"
@@ -159,21 +205,21 @@ const MiningEnergyPage = () => {
             {[
               {
                 title: 'Coal Projects',
-                icon: <LocationIcon />,
                 desc: 'Located in South Sumatra and East Kalimantan, our coal operations feature mid-to-high calorific value reserves and established logistics networks.',
                 href: '#coal-projects',
+                image: '/assets/images/img.Coal01.jpg',
               },
               {
                 title: 'Gold Projects',
-                icon: <TypeIcon />,
                 desc: 'Our gold assets in West Sumatra and West Kalimantan demonstrate strong geological potential with confirmed grades up to 8.6 ppm.',
                 href: '#gold-projects',
+                image: '/assets/images/img.Gold04.jpg',
               },
               {
                 title: 'Nickel Projects',
-                icon: <LicenseIcon />,
                 desc: 'In partnership with licensed holders in Sulawesi, Polaris is developing nickel concessions aligned with Indonesia’s national downstream vision for EV battery and stainless steel industries.',
                 href: '#nickel-projects',
+                image: '/assets/images/img.Nickel02.jpg',
               },
             ].map((project, idx) => (
               <motion.div
@@ -181,11 +227,17 @@ const MiningEnergyPage = () => {
                 whileHover={{ y: -8 }}
                 className="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-xl transition-all duration-300"
               >
-                <div className="w-14 h-14 bg-amber-600 text-white rounded-lg flex items-center justify-center mb-5">
-                  {project.icon}
+                <div className="relative w-full h-40 mb-4 rounded-lg overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
                 </div>
                 <h3 className="text-xl font-bold text-amber-700 mb-3">{project.title}</h3>
-                <p className="text-slate-600 text-sm mb-4">{project.desc}</p>
+                <p className="text-slate-600 mb-4 text-sm">{project.desc}</p>
                 <Link
                   href={project.href}
                   className="inline-flex items-center gap-1 text-amber-600 font-semibold hover:text-amber-800 transition-colors"
@@ -199,29 +251,22 @@ const MiningEnergyPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-12 bg-white">
-        <div className="text-center">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-amber-600 text-white px-8 py-4 font-bold rounded-full hover:bg-amber-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.02]"
-          >
-            Explore Our Mining Portfolio
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-        </div>
-      </section>
+      <div className="text-center mb-20">
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-2 bg-amber-600 text-white px-8 py-4 font-bold rounded-full hover:bg-amber-700 transition-all duration-300 shadow-md hover:shadow-lg"
+        >
+          Explore Our Mining Portfolio
+          <ArrowRight className="w-5 h-5" />
+        </Link>
+      </div>
 
-      {/* Project Details */}
-      <div className="bg-slate-50 py-16">
+      {/* Project Details — with header images */}
+      <div className="bg-white py-16">
         <div className="container mx-auto px-6 lg:px-12">
           {/* Coal */}
           <section id="coal-projects" className="mb-20">
-            <h2
-              className="text-2xl font-bold text-slate-900 mb-8"
-              style={{ fontFamily: '"Cormorant Garamond", serif' }}
-            >
-              Coal Projects
-            </h2>
+            <ProjectSectionHeader title="Coal Projects" imageSrc="/assets/images/img.Coal01.jpg" />
             <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
               <ProjectCard
                 title="South Sumatera Coal Project"
@@ -256,12 +301,7 @@ const MiningEnergyPage = () => {
 
           {/* Gold */}
           <section id="gold-projects" className="mb-20">
-            <h2
-              className="text-2xl font-bold text-slate-900 mb-8"
-              style={{ fontFamily: '"Cormorant Garamond", serif' }}
-            >
-              Gold Projects
-            </h2>
+            <ProjectSectionHeader title="Gold Projects" imageSrc="/assets/images/img.Gold04.jpg" />
             <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
               <ProjectCard
                 title="West Sumatra Gold Project"
@@ -282,12 +322,7 @@ const MiningEnergyPage = () => {
 
           {/* Nickel */}
           <section id="nickel-projects" className="mb-20">
-            <h2
-              className="text-2xl font-bold text-slate-900 mb-8"
-              style={{ fontFamily: '"Cormorant Garamond", serif' }}
-            >
-              Nickel Projects
-            </h2>
+            <ProjectSectionHeader title="Nickel Projects" imageSrc="/assets/images/img.Nickel02.jpg" />
             <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
               <ProjectCard
                 title="Southeast Sulawesi Nickel Project"
@@ -310,23 +345,15 @@ const MiningEnergyPage = () => {
       </div>
 
       {/* Final CTA */}
-      <section className="py-16 lg:py-20 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
-        <div className="container mx-auto px-6 lg:px-12 text-center">
-          <h2
-            className="text-3xl md:text-4xl font-bold mb-6"
-            style={{ fontFamily: '"Cormorant Garamond", serif' }}
-          >
-            Ready to Invest in Indonesia’s Mining Future?
-          </h2>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-amber-500 text-slate-900 px-8 py-4 font-bold rounded-full hover:bg-amber-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
-          >
-            Partner With Us
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-        </div>
-      </section>
+      <div className="text-center py-12 bg-slate-50">
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-2 bg-amber-600 text-white px-8 py-4 font-bold rounded-full hover:bg-amber-700 transition-all duration-300 shadow-md hover:shadow-lg"
+        >
+          Explore Our Mining Portfolio
+          <ArrowRight className="w-5 h-5" />
+        </Link>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,8 @@
 // src/app/projects/page.tsx
 'use client';
 
+import Link from 'next/link';
+import Image from 'next/image';
 import { Pickaxe, Gem, Battery, Truck, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -31,6 +33,7 @@ const TypeIcon = () => (
   </svg>
 );
 
+// Reusable Project Card with Image
 const ProjectCard = ({
   title,
   items,
@@ -57,6 +60,54 @@ const ProjectCard = ({
   </motion.div>
 );
 
+// Section Header with Image
+const ProjectSectionHeader = ({ title, imageSrc }: { title: string; imageSrc: string }) => (
+  <div className="relative w-full h-32 mb-6 rounded-xl overflow-hidden">
+    <Image
+      src={imageSrc}
+      alt={title}
+      fill
+      className="object-cover"
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent"></div>
+    <div className="absolute bottom-4 left-6">
+      <h2 className="text-xl font-bold text-white" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
+        {title}
+      </h2>
+    </div>
+  </div>
+);
+
+// CSR Gallery Component
+const CsrGallery = () => (
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+    <div className="relative w-full h-48 rounded-lg overflow-hidden">
+      <Image
+        src="/assets/images/img.CSR01.jpg"
+        alt="CSR Activity 1"
+        fill
+        className="object-cover"
+      />
+    </div>
+    <div className="relative w-full h-48 rounded-lg overflow-hidden">
+      <Image
+        src="/assets/images/img.CSR02.jpg"
+        alt="CSR Activity 2"
+        fill
+        className="object-cover"
+      />
+    </div>
+    <div className="relative w-full h-48 rounded-lg overflow-hidden">
+      <Image
+        src="/assets/images/img.CSR03.jpg"
+        alt="CSR Activity 3"
+        fill
+        className="object-cover"
+      />
+    </div>
+  </div>
+);
+
 const ProjectsPage = () => {
   return (
     <div className="pt-20">
@@ -80,12 +131,7 @@ const ProjectsPage = () => {
       {/* Coal Projects */}
       <section className="py-8 lg:py-12 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
-          <h2
-            className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2"
-            style={{ fontFamily: '"Cormorant Garamond", serif' }}
-          >
-            <Pickaxe className="w-5 h-5 text-amber-600" /> Coal Projects
-          </h2>
+          <ProjectSectionHeader title="Coal Projects" imageSrc="/assets/images/img.Coal01.jpg" />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <ProjectCard
               title="South Sumatera Coal Project"
@@ -121,12 +167,7 @@ const ProjectsPage = () => {
       {/* Gold Projects */}
       <section className="py-8 lg:py-12 bg-slate-50">
         <div className="container mx-auto px-6 lg:px-12">
-          <h2
-            className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2"
-            style={{ fontFamily: '"Cormorant Garamond", serif' }}
-          >
-            <Gem className="w-5 h-5 text-amber-600" /> Gold Projects
-          </h2>
+          <ProjectSectionHeader title="Gold Projects" imageSrc="/assets/images/img.Gold04.jpg" />
           <ProjectCard
             title="West Sumatra Gold Project"
             items={[
@@ -142,12 +183,7 @@ const ProjectsPage = () => {
       {/* Nickel Projects */}
       <section className="py-8 lg:py-12 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
-          <h2
-            className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2"
-            style={{ fontFamily: '"Cormorant Garamond", serif' }}
-          >
-            <Battery className="w-5 h-5 text-amber-600" /> Nickel Projects
-          </h2>
+          <ProjectSectionHeader title="Nickel Projects" imageSrc="/assets/images/img.Nickel02.jpg" />
           <ProjectCard
             title="Southeast Sulawesi Nickel Project"
             items={[
@@ -163,12 +199,7 @@ const ProjectsPage = () => {
       {/* Industrial Trading */}
       <section className="py-8 lg:py-12 bg-slate-50">
         <div className="container mx-auto px-6 lg:px-12">
-          <h2
-            className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2"
-            style={{ fontFamily: '"Cormorant Garamond", serif' }}
-          >
-            <Truck className="w-5 h-5 text-amber-600" /> Industrial Trading & Equipment
-          </h2>
+          <ProjectSectionHeader title="Industrial Trading & Equipment" imageSrc="/assets/images/LTC-Glodok.jpg" />
           <ProjectCard
             title="LTC Glodok Trading Division"
             items={[
@@ -183,12 +214,7 @@ const ProjectsPage = () => {
       {/* Social Projects */}
       <section className="py-8 lg:py-12 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
-          <h2
-            className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2"
-            style={{ fontFamily: '"Cormorant Garamond", serif' }}
-          >
-            <Heart className="w-5 h-5 text-amber-600" /> Social Projects & CSR
-          </h2>
+          <ProjectSectionHeader title="Social Projects & CSR" imageSrc="/assets/images/img.CSR03.jpg" />
           <div className="grid md:grid-cols-2 gap-6">
             <ProjectCard
               title="Yayasan Buddha Samanta Bhadra"
@@ -206,6 +232,11 @@ const ProjectsPage = () => {
               ]}
               description="Free ambulance & fire response services."
             />
+          </div>
+          {/* CSR Gallery */}
+          <div className="mt-8">
+            <h3 className="text-lg font-semibold text-slate-900 mb-4">Our Community Impact</h3>
+            <CsrGallery />
           </div>
         </div>
       </section>

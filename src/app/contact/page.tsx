@@ -1,26 +1,66 @@
 // src/app/contact/page.tsx
 'use client';
 
-import { MapPin, Phone, Mail, Building2, User } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { MapPin, Phone, Mail, Building2, User } from 'lucide-react';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+// Custom Globe icon
+const GlobeIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-amber-600">
+    <circle cx="12" cy="12" r="10" />
+    <line x1="2" x2="22" y1="12" y2="12" />
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+  </svg>
+);
 
 const ContactPage = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-12 lg:py-16 bg-gradient-to-b from-slate-50 to-white">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1
-              className="text-4xl md:text-5xl font-bold text-slate-900 mb-6"
-              style={{ fontFamily: '"Cormorant Garamond", serif' }}
-            >
-              Partner With Confidence — Build the Future with Polaris
-            </h1>
-            <p className="text-lg text-slate-600">
-              At PT Polaris Dana Investment, we believe that meaningful partnerships are built on trust, transparency, and shared vision. Whether you represent an institutional investor, private equity fund, or strategic industrial partner, our team is ready to help you identify and participate in Indonesia’s most promising investment opportunities.
-            </p>
+      <section className="relative w-full h-[60vh] overflow-hidden group">
+        <Image
+          src="/assets/images/about-1.jpg"
+          alt="Polaris Dana Investment - Contact Us"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/50 to-transparent" />
+        <div className="absolute top-20 -right-20 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 -left-20 w-80 h-80 bg-emerald-500/5 rounded-full blur-3xl" />
+
+        <div className="absolute inset-0 flex items-center">
+          <div className="container mx-auto px-6 lg:px-12 relative z-10">
+            <div className="max-w-3xl">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-sm md:text-base font-medium tracking-widest uppercase text-amber-400 mb-4"
+              >
+                Contact Us
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
+                style={{ fontFamily: '"Cormorant Garamond", serif' }}
+              >
+                Partner With Confidence
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-lg md:text-xl text-slate-200"
+              >
+                Build the future with PT Polaris Dana Investment — your trusted gateway to Indonesia’s real economy.
+              </motion.p>
+            </div>
           </div>
         </div>
       </section>
@@ -59,19 +99,18 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Office Locations */}
+      {/* Office Locations — Dengan Gambar Gedung */}
       <section className="py-8 lg:py-12 bg-slate-50">
         <div className="container mx-auto px-6 lg:px-12">
           <h2
-            className="text-2xl font-bold text-slate-900 mb-6 text-center"
+            className="text-2xl font-bold text-slate-900 mb-10 text-center"
             style={{ fontFamily: '"Cormorant Garamond", serif' }}
           >
             📍 Our Locations
           </h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="flex gap-4">
-              <MapPin className="w-6 h-6 text-amber-600 mt-1 flex-shrink-0" />
-              <div>
+            <div className="bg-white p-6 rounded-xl border border-slate-200">
+              <div className="mb-4">
                 <h3 className="font-bold text-slate-900 mb-2">Head Office</h3>
                 <p className="text-slate-600 text-sm">
                   Citra Office Tower – Kemayoran<br />
@@ -80,16 +119,33 @@ const ContactPage = () => {
                   Kota Jakarta Pusat, DKI Jakarta 10630
                 </p>
               </div>
+              <div className="relative w-full h-40 rounded-lg overflow-hidden">
+                <Image
+                  src="/assets/images/citra.jpg"
+                  alt="Citra Office Tower - Head Office"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent"></div>
+              </div>
             </div>
-            <div className="flex gap-4">
-              <Building2 className="w-6 h-6 text-amber-600 mt-1 flex-shrink-0" />
-              <div>
+            <div className="bg-white p-6 rounded-xl border border-slate-200">
+              <div className="mb-4">
                 <h3 className="font-bold text-slate-900 mb-2">Representative Meeting Point</h3>
                 <p className="text-slate-600 text-sm">
                   Signature by Regus, 37th Floor – Menara Astra<br />
                   Jl. Jend. Sudirman Kav. 5–6, Jakarta 10220<br />
                   📞 (021) 25555700
                 </p>
+              </div>
+              <div className="relative w-full h-40 rounded-lg overflow-hidden">
+                <Image
+                  src="/assets/images/astra1.jpg"
+                  alt="Menara Astra - Representative Office"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent"></div>
               </div>
             </div>
           </div>
@@ -159,14 +215,5 @@ const ContactPage = () => {
     </div>
   );
 };
-
-// Custom Globe icon
-const GlobeIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-amber-600">
-    <circle cx="12" cy="12" r="10" />
-    <line x1="2" x2="22" y1="12" y2="12" />
-    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-  </svg>
-);
 
 export default ContactPage;

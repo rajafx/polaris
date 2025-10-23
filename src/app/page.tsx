@@ -23,28 +23,28 @@ const HeroCarousel: React.FC = () => {
   const slides: Slide[] = [
     {
       id: 1,
-      imgSrc: '/assets/images/carousel-1.jpg',
+      imgSrc: '/assets/images/carousel-1.jpeg',
       title: 'Empowering Growth Through Strategic Capital',
       subtitle: 'Corporate Identity',
       description: 'Sustainable investment partnerships across Indonesia.',
     },
     {
       id: 2,
-      imgSrc: '/assets/images/carousel-2.jpg',
+      imgSrc: '/assets/images/carousel-2.jpeg',
       title: 'Unlocking Indonesia’s Natural Potential',
       subtitle: 'Mining & Energy',
       description: 'Coal • Gold • Nickel — responsible and profitable mining ventures.',
     },
     {
       id: 3,
-      imgSrc: '/assets/images/carousel-3.jpg',
+      imgSrc: '/assets/images/carousel-3.jpeg',
       title: 'Bridging Investors and Opportunity',
       subtitle: 'Venture & Financial Services',
       description: 'Venture capital • Fintech • Corporate financing solutions.',
     },
     {
       id: 4,
-      imgSrc: '/assets/images/carousel-4.jpg',
+      imgSrc: '/assets/images/carousel-4.jpeg',
       title: 'Building a sustainable investment future with trust and transparency.',
       subtitle: 'Corporate Commitment',
       description: 'Integrity. Impact. Innovation.',

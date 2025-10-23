@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 const AboutPage = () => {
   return (
     <div className="pt-20">
-      {/* Hero Section */}
+      {/* Hero Section — Gambar Menara Astra */}
       <section className="relative py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -116,7 +116,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Integrated Services — Hover Effect */}
+      {/* Integrated Services — Dengan Gambar Aktivitas Mining */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -137,26 +137,31 @@ const AboutPage = () => {
                 icon: <Coins className="w-8 h-8" />,
                 title: 'Investment Management & Financial Solutions',
                 desc: 'Fund management, venture capital, P2P lending, and SME financing under regulated frameworks.',
+                image: '/assets/images/finance-2.jpg',
               },
               {
                 icon: <Building2 className="w-8 h-8" />,
                 title: 'Mining Partnerships & Project Development',
                 desc: 'Joint Operations in coal, gold, and nickel with licensed IUP holders and full regulatory support.',
+                image: '/assets/images/img.Coal02.jpg',
               },
               {
                 icon: <Users className="w-8 h-8" />,
                 title: 'Corporate Advisory & Business Establishment',
                 desc: 'PT PMA setup, OSS/NIB registration, licensing, and compliance advisory for foreign investors.',
+                image: '/assets/images/finance-1.jpg',
               },
               {
                 icon: <Truck className="w-8 h-8" />,
                 title: 'Industrial Trading & Equipment Distribution',
                 desc: 'Import and distribution of pumps, gensets, safety gear, and industrial tools from LTC Glodok.',
+                image: '/assets/images/finance-3.jpg',
               },
               {
                 icon: <Globe className="w-8 h-8" />,
                 title: 'Strategic Funding & Investor Relations',
                 desc: 'Capital syndication, financial modeling, and exit strategy design for real-sector projects.',
+                image: '/assets/images/finance-4.jpg',
               },
             ].map((service, idx) => (
               <motion.div
@@ -164,6 +169,16 @@ const AboutPage = () => {
                 whileHover={{ y: -8 }}
                 className="bg-white border border-slate-200 rounded-2xl p-6 text-center transition-all duration-300 hover:shadow-xl hover:border-amber-200"
               >
+                <div className="relative w-full h-40 mb-4 rounded-lg overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
+                </div>
+
                 <div className="w-14 h-14 bg-amber-100 text-amber-700 rounded-lg flex items-center justify-center mx-auto mb-4 transition-colors hover:bg-amber-200">
                   {service.icon}
                 </div>
@@ -175,7 +190,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Office Locations */}
+      {/* Office Locations — Dengan Gambar Gedung */}
       <section className="py-16 lg:py-20 bg-slate-50">
         <div className="container mx-auto px-6 lg:px-12">
           <h2
@@ -186,21 +201,43 @@ const AboutPage = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-white p-6 rounded-xl border border-slate-200">
-              <h3 className="font-bold text-slate-900 mb-3">Head Office</h3>
-              <p className="text-slate-600 text-sm">
-                Citra Office Tower – Kemayoran<br />
-                Jl. Benyamin Suaeb, Jl. Casa Blok A6 No.170 13,<br />
-                RT.13/RW.6, Kb. Kosong, Kec. Kemayoran,<br />
-                Kota Jakarta Pusat, DKI Jakarta 10630
-              </p>
+              <div className="mb-4">
+                <h3 className="font-bold text-slate-900 mb-2">Head Office</h3>
+                <p className="text-slate-600 text-sm">
+                  Citra Office Tower – Kemayoran<br />
+                  Jl. Benyamin Suaeb, Jl. Casa Blok A6 No.170 13,<br />
+                  RT.13/RW.6, Kb. Kosong, Kec. Kemayoran,<br />
+                  Kota Jakarta Pusat, DKI Jakarta 10630
+                </p>
+              </div>
+              <div className="relative w-full h-40 rounded-lg overflow-hidden">
+                <Image
+                  src="/assets/images/citra.jpg"
+                  alt="Citra Office Tower - Head Office"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent"></div>
+              </div>
             </div>
             <div className="bg-white p-6 rounded-xl border border-slate-200">
-              <h3 className="font-bold text-slate-900 mb-3">Representative Meeting Point</h3>
-              <p className="text-slate-600 text-sm">
-                Signature by Regus, 37th Floor – Menara Astra<br />
-                Jl. Jend. Sudirman Kav. 5–6, Jakarta 10220<br />
-                📞 (021) 25555700
-              </p>
+              <div className="mb-4">
+                <h3 className="font-bold text-slate-900 mb-2">Representative Meeting Point</h3>
+                <p className="text-slate-600 text-sm">
+                  Signature by Regus, 37th Floor – Menara Astra<br />
+                  Jl. Jend. Sudirman Kav. 5–6, Jakarta 10220<br />
+                  📞 (021) 25555700
+                </p>
+              </div>
+              <div className="relative w-full h-40 rounded-lg overflow-hidden">
+                <Image
+                  src="/assets/images/astra1.jpg"
+                  alt="Menara Astra - Representative Office"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent"></div>
+              </div>
             </div>
           </div>
         </div>

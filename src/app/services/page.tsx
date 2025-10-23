@@ -3,6 +3,7 @@
 
 import { DESIGN_TOKENS } from '@/styles/designTokens';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -27,23 +28,37 @@ const AdvisoryIcon = () => (
   </svg>
 );
 
+// Reusable Service Card with Image
 const ServiceCard = ({
   title,
   description,
   href,
   icon,
   color,
+  imageSrc,
 }: {
   title: string;
   description: string;
   href: string;
   icon: React.ReactNode;
   color: string;
+  imageSrc: string;
 }) => (
   <motion.div
     whileHover={{ y: -8 }}
     className="group bg-white border border-slate-200 rounded-2xl p-6 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:border-amber-200"
   >
+    {/* Gambar Layanan */}
+    <div className="relative w-full h-40 mb-4 rounded-lg overflow-hidden">
+      <Image
+        src={imageSrc}
+        alt={title}
+        fill
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
+    </div>
+
     <div className={`w-14 h-14 ${color} text-white rounded-lg flex items-center justify-center mb-5`}>
       {icon}
     </div>
@@ -88,20 +103,23 @@ export default function ServicesPage() {
               description="Strategic Joint Operations in coal, gold, and nickel with licensed IUP holders and full regulatory support."
               href="/mining-energy"
               color="bg-amber-600"
+              imageSrc="/assets/images/img.Nickel02.jpg" // ← Gambar tangan memegang batu bara
             />
             <ServiceCard
               icon={<InvestmentIcon />}
               title="Investment & Financial Services"
               description="Venture capital, project financing, and fintech lending under Indonesia’s regulated NIB framework."
               href="/investment-financial"
-              color="bg-amber-600"
+              color="bg-emerald-600"
+              imageSrc="/assets/images/service-6.jpg" // ← Gambar pertemuan bisnis
             />
             <ServiceCard
               icon={<AdvisoryIcon />}
               title="Corporate Advisory & Development"
               description="Company setup, licensing, and compliance advisory for foreign and domestic investors."
               href="/corporate-advisory"
-              color="bg-amber-700"
+              color="bg-slate-700"
+              imageSrc="/assets/images/img.kontrak03.jpg" // ← Gambar konsultasi korporat
             />
           </div>
         </div>
