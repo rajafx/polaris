@@ -213,7 +213,7 @@ export default function HomePage() {
               Your Trusted Partner in Investment, Project Development, and Strategic Growth.
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed">
-              PT Polaris Dana Investment is a fully licensed investment company based in Jakarta, Indonesia. Through strategic acquisitions and Joint Operations (JO) with licensed concession holders, Polaris enables global and local investors to participate in high-value ventures across energy, mining, infrastructure, and financial services.
+              PT Polaris Dana Investment is a fully licensed investment company based in Jakarta, Indonesia. Through strategic acquisitions and Joint Operations (JO) with licensed concession holders, Polaris enables global and local investors to participate in high-value ventures across energy, mining, infrastructure and financial services.
             </p>
           </div>
         </div>
