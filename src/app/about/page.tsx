@@ -212,7 +212,7 @@ const AboutPage = () => {
               </div>
               <div className="relative w-full h-40 rounded-lg overflow-hidden">
                 <Image
-                  src="/assets/images/citra.jpg"
+                  src="/assets/images/citra2.jpg"
                   alt="Citra Office Tower - Head Office"
                   fill
                   className="object-cover"
