@@ -148,7 +148,7 @@ const MiningEnergyPage = () => {
                 Through strategic acquisitions and Joint Operation (JO) partnerships with licensed concession holders, Polaris connects global capital with high-potential mining assets — ensuring legal certainty, operational readiness, and environmental responsibility.
               </p>
               <p className="text-slate-600 leading-relaxed">
-                Our mining portfolio covers coal, gold, and nickel, three of Indonesia&apos;s most important mineral commodities. Each project is developed under a verified IUP (Mining License) and RKAB (Annual Work Plan & Budget), ensuring compliance with Indonesian law and ESG principles.
+                Our mining portfolio covers coal, gold, and nickel, three of Indonesia’s most important mineral commodities. Each project is developed under a verified IUP (Mining License) and RKAB (Annual Work Plan & Budget), ensuring compliance with Indonesian law and ESG principles.
               </p>
             </div>
 
@@ -163,19 +163,19 @@ const MiningEnergyPage = () => {
                 {[
                   {
                     title: 'Legal certainty through licensed JO agreements.',
-                    desc: 'Menggunakan perjanjian JO yang berlisensi untuk memastikan kepastian hukum.',
+                    desc: 'Utilizing licensed Joint Operation agreements to ensure legal clarity and investor protection.',
                   },
                   {
                     title: 'Milestone-based capital deployment.',
-                    desc: 'Penyaluran modal investasi berdasarkan pencapaian proyek yang terverifikasi.',
+                    desc: 'Capital disbursement tied to verified project milestones for disciplined investment execution.',
                   },
                   {
                     title: 'ESG compliance embedded in all project phases.',
-                    desc: 'Kepatuhan ESG di semua tahapan proyek.',
+                    desc: 'Environmental, Social, and Governance principles integrated from exploration to closure.',
                   },
                   {
                     title: 'Infrastructure integration.',
-                    desc: 'Optimalisasi infrastruktur (jalan, pelabuhan, dan pengangkutan).',
+                    desc: 'Optimized logistics through road, port, and hauling infrastructure development.',
                   },
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
@@ -211,7 +211,7 @@ const MiningEnergyPage = () => {
               },
               {
                 title: 'Gold Projects',
-                desc: 'Our gold assets in West Sumatra and West Kalimantan demonstrate strong geological potential with confirmed grades up to 8.6 ppm.',
+                desc: 'Our gold assets in West Sumatra and West Kalimantan demonstrate strong geological potential with confirmed grades up to 8.6 ppm Au.',
                 href: '#gold-projects',
                 image: '/assets/images/img.Gold04.jpg',
               },
@@ -309,7 +309,7 @@ const MiningEnergyPage = () => {
                   { icon: <LocationIcon />, label: 'Location', value: 'Solok Selatan – West Sumatra' },
                   { icon: <AreaIcon />, label: 'Area', value: '±129 hectares' },
                   { icon: <LicenseIcon />, label: 'License Status', value: 'Valid Exploration Permit' },
-                  { icon: <TypeIcon />, label: 'Type', value: 'Epithermal gold system within Sumatra magmatical arc' },
+                  { icon: <TypeIcon />, label: 'Type', value: 'Epithermal gold system within Sumatra magmatic arc' },
                 ]}
                 highlights={[
                   'Assay results up to 8.6 ppm Au (gold)',

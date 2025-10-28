@@ -1,7 +1,6 @@
 // src/app/services/page.tsx
 'use client';
 
-import { DESIGN_TOKENS } from '@/styles/designTokens';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
@@ -103,7 +102,7 @@ export default function ServicesPage() {
               description="Strategic Joint Operations in coal, gold, and nickel with licensed IUP holders and full regulatory support."
               href="/mining-energy"
               color="bg-amber-600"
-              imageSrc="/assets/images/img.Nickel02.jpg" // ← Gambar tangan memegang batu bara
+              imageSrc="/assets/images/img.Nickel02.jpg"
             />
             <ServiceCard
               icon={<InvestmentIcon />}
@@ -111,7 +110,7 @@ export default function ServicesPage() {
               description="Venture capital, project financing, and fintech lending under Indonesia’s regulated NIB framework."
               href="/investment-financial"
               color="bg-emerald-600"
-              imageSrc="/assets/images/service-6.jpg" // ← Gambar pertemuan bisnis
+              imageSrc="/assets/images/service-6.jpg"
             />
             <ServiceCard
               icon={<AdvisoryIcon />}
@@ -119,8 +118,48 @@ export default function ServicesPage() {
               description="Company setup, licensing, and compliance advisory for foreign and domestic investors."
               href="/corporate-advisory"
               color="bg-slate-700"
-              imageSrc="/assets/images/img.kontrak03.jpg" // ← Gambar konsultasi korporat
+              imageSrc="/assets/images/finance-1.jpg"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Industrial Trading Section — Dengan 10 Foto Produk */}
+      <section className="py-16 lg:py-20 bg-slate-50">
+        <div className="container mx-auto px-6 lg:px-12">
+          <h2
+            className="text-3xl font-bold text-slate-900 mb-10 text-center"
+            style={{ fontFamily: '"Cormorant Garamond", serif' }}
+          >
+            Industrial Trading & Equipment Distribution
+          </h2>
+          <p className="text-slate-600 text-center mb-8">
+            Import and distribution of pumps, gensets, welding machines, PPE, motors, and more. Authorized distributor for Chinese manufacturers.
+          </p>
+
+          {/* Grid 10 Foto Produk */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
+              <div key={i} className="relative w-full h-40 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                <Image
+                  src={`/assets/industri/industri-${i}.png`}
+                  alt={`Industrial Product ${i}`}
+                  fill
+                  className="object-contain p-2"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="mt-8 text-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-amber-600 text-white px-8 py-4 font-bold rounded-full hover:bg-amber-700 transition-all duration-300 shadow-md hover:shadow-lg"
+            >
+              View Full Catalog
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>

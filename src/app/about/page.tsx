@@ -1,7 +1,6 @@
 // src/app/about/page.tsx
 'use client';
 
-import { DESIGN_TOKENS } from '@/styles/designTokens';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Coins, Building2, Users, Truck, Globe, Target, Compass } from 'lucide-react';
@@ -10,34 +9,52 @@ import { motion } from 'framer-motion';
 const AboutPage = () => {
   return (
     <div className="pt-20">
-      {/* Hero Section — Gambar Menara Astra */}
-      <section className="relative py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1
-                className="text-4xl md:text-5xl font-bold text-slate-900 mb-6"
+      {/* Hero Section — Video Background */}
+      <section className="relative w-full h-[80vh] overflow-hidden group">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ zIndex: -1 }}
+        >
+          <source src="/assets/videos/jakarta-city.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/50 to-transparent" />
+        <div className="absolute top-20 -right-20 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 -left-20 w-80 h-80 bg-emerald-500/5 rounded-full blur-3xl" />
+
+        <div className="absolute inset-0 flex items-center">
+          <div className="container mx-auto px-6 lg:px-12 relative z-10">
+            <div className="max-w-3xl">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-sm md:text-base font-medium tracking-widest uppercase text-amber-400 mb-4"
+              >
+                Discover Our Company
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
                 style={{ fontFamily: '"Cormorant Garamond", serif' }}
               >
                 Discover Our Company and Seize the Opportunity
-              </h1>
-              <p className="text-lg text-slate-600">
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-lg md:text-xl text-slate-200"
+              >
                 PT Polaris Dana Investment is an Indonesian investment management and strategic venture company dedicated to providing trusted, innovative, and compliant investment solutions for both individual and institutional clients.
-              </p>
+              </motion.p>
             </div>
-            <motion.div
-              whileHover={{ y: -8 }}
-              className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl"
-            >
-              <Image
-                src="/assets/images/astra.jpg"
-                alt="Menara Astra - Polaris Dana Investment Representative Office"
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent"></div>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -212,7 +229,7 @@ const AboutPage = () => {
               </div>
               <div className="relative w-full h-40 rounded-lg overflow-hidden">
                 <Image
-                  src="/assets/images/citra2.jpg"
+                  src="/assets/images/citra.jpg"
                   alt="Citra Office Tower - Head Office"
                   fill
                   className="object-cover"
