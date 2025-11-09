@@ -239,9 +239,9 @@ const AboutPage = () => {
             </div>
             <div className="bg-white p-6 rounded-xl border border-slate-200">
               <div className="mb-4">
-                <h3 className="font-bold text-slate-900 mb-2">Representative Meeting Point</h3>
+                <h3 className="font-bold text-slate-900 mb-2">Office</h3>
                 <p className="text-slate-600 text-sm">
-                  Signature by Regus, 37th Floor – Menara Astra<br />
+                  Menara Astra-37th Floor<br />
                   Jl. Jend. Sudirman Kav. 5–6, Jakarta 10220<br />
                   📞 (021) 25555700
                 </p>
@@ -249,7 +249,7 @@ const AboutPage = () => {
               <div className="relative w-full h-40 rounded-lg overflow-hidden">
                 <Image
                   src="/assets/images/astra1.jpg"
-                  alt="Menara Astra - Representative Office"
+                  alt="Menara Astra - Office"
                   fill
                   className="object-cover"
                 />
