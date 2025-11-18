@@ -198,39 +198,6 @@ const ContactPage = () => {
               For partnership inquiries, investment collaboration, or corporate relations — reach our investor team directly.
             </p>
           </div>
-
-          <div className="grid sm:grid-cols-2 gap-8">
-            {[
-              {
-                name: "Mr. Hendra Gunawan",
-                phone: "+62 812 1986 9009",
-                title: "Investor Relations Director",
-                badge: "IR Director"
-              },
-              {
-                name: "Mr. Ismet Nuroni",
-                phone: "+62 812 8000 543",
-                title: "Head of Institutional Relations",
-                badge: "Institutional"
-              }
-            ].map((person, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: i * 0.2 }}
-                className="bg-white border border-slate-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition duration-300"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-lg font-semibold text-slate-900">{person.name}</h3>
-                  <span className="text-xs bg-amber-100 text-amber-700 px-3 py-1 rounded-full font-medium">{person.badge}</span>
-                </div>
-                <p className="text-sm text-slate-500 mb-4">{person.title}</p>
-                <p className="text-slate-800 font-medium">{person.phone}</p>
-              </motion.div>
-            ))}
-          </div>
-
           <div className="mt-10 grid sm:grid-cols-2 gap-6 text-slate-700">
             <div className="flex items-start gap-4">
               <Mail className="w-6 h-6 text-amber-600 mt-1" />
